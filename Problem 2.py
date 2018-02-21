@@ -23,7 +23,7 @@ class Game(object):
             for i in range(0, self.number_of_flips): # iterate through flips, treating 1's as heads and 0's as tails
                 fliplist = fliplist + str((numpy.random.binomial(1, self.flip_probability))) #per https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.binomial.html, add each flip to fliplist
 
-            winnings = gamecost+(50*(fliplist.count("001"))) # find the number of Tails, Tails, Heads, multiply by fifty, add to cost of plahing the game to find winnings
+            winnings = gamecost+(100*(fliplist.count("001"))) # find the number of Tails, Tails, Heads, multiply by fifty, add to cost of plahing the game to find winnings
             totalwinnings = totalwinnings + winnings # add all the realizations of winnings together
 
         averagewinnings = '${:,.2f}'.format((totalwinnings/self.number_of_realizations)) # find the average winnings
